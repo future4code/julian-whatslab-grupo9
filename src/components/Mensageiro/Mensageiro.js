@@ -4,8 +4,29 @@ import './Mensageiro.css'
 class Mensageiro extends React.Component {
     state={
         mensagens: [],
-        valorUsuario: "",
-        valorMensagem: ""
+        valorUsuario: '',
+        valorMensagem: ''
+    }
+
+    atualizaMensagens = () => {
+        const listaDeMensagens = this.state.mensagens.map((mensagem, index) =>{
+            if(mensagem.usuario==="eu"){
+                return <div key={index} numero={index} onDoubleClick={this.deletar} className="mensagem-div-eu"><span className="mensagem-eu"><p>{mensagem.texto}</p></span></div>
+            }
+          return <div key={index} numero={index} onDoubleClick={this.deletar} className="mensagem-div-outros"><span className="mensagem-outros"><h4>{mensagem.usuario}</h4><p>{mensagem.texto}</p></span></div>
+        })
+        return listaDeMensagens
+    }
+
+    deletar = (event) =>{
+        if(window.confirm("Quer deletar essa mensagem?")){
+            const indice=event.currentTarget.getAttribute('numero')
+            const listaDeMensagens = this.state.mensagens;
+            listaDeMensagens.splice(indice, 1);
+            this.setState({
+                mensagens: listaDeMensagens
+            })
+        }
     }
 
     onChangeUsuario = (event) => {
@@ -18,9 +39,15 @@ class Mensageiro extends React.Component {
 		this.setState({
 			valorMensagem: event.target.value
 		})
-    }
+	}
 
     enviar = () => {
+        if(this.state.valorUsuario === "" || this.state.valorMensagem === ""){
+            if(this.state.valorUsuario === ""){
+                return window.alert("Digite o usuario")
+            }
+            return window.alert("Digite a mensagem")
+        }
         const listaDeMensagens = this.state.mensagens;
         const mensagem = {
             usuario: this.state.valorUsuario,
@@ -32,21 +59,13 @@ class Mensageiro extends React.Component {
             valorMensagem: ''
         })
     }
-    
+
     enviaComEnter = (event) => {
         if(event.key==="Enter"){
             this.enviar();
         }
     }
 
-    atualizaMensagens = () => {
-        const listaDeMensagens = this.state.mensagens.map(mensagem =>{
-                return <div><h4>{mensagem.usuario}: </h4><p>{mensagem.texto}</p></div>
-            
-        })
-        return listaDeMensagens;
-    }
-    
     render(){
         const listaAtualizada = this.atualizaMensagens();
         return (
