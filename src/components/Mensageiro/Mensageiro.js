@@ -32,6 +32,12 @@ class Mensageiro extends React.Component {
             valorMensagem: ''
         })
     }
+    
+    enviaComEnter = (event) => {
+        if(event.key==="Enter"){
+            this.enviar();
+        }
+    }
 
     atualizaMensagens = () => {
         const listaDeMensagens = this.state.mensagens.map(mensagem =>{
