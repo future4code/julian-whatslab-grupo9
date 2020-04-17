@@ -14,7 +14,7 @@
     overflow-y: auto;
 }
 
-input {
+h4, p, input {
     display: inline;
 }
 
