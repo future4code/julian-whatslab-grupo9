@@ -87,7 +87,7 @@ class Mensageiro extends React.Component {
                         onChange={this.onChangeMensagem}
                         onKeyDown={this.enviaComEnter}
                     />
-                    <button onClick={this.enviar}>Enviar</button>
+                    <div className="button" onClick ={this.enviar}>ENVIAR</div>
                 </div>
             </div>
         )
