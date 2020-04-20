@@ -1,63 +1,84 @@
-::-webkit-scrollbar {
-    width: 5px;
-}
+                                                                              ::-webkit-scrollbar {
+                                                                                 width: 5px;
+                                                                             }
+                                                                             
+                                                                              ::-webkit-scrollbar-track {
+                                                                                 box-shadow: inset 0 0
+                                                                             }
+                                                                             
+                                                                              ::-webkit-scrollbar-thumb {
+                                                                                 background: rgb(102, 142, 253);
+                                                                                 border-radius: 8px;
+                                                                             }
+                                                                             
+                                                                             .container {
+                                                                                 display: flex;
+                                                                                 align-items: flex-start;
+                                                                                 justify-content: flex-end;
+                                                                                 flex-direction: column;
+                                                                                 border: 1px solid rgb(136, 138, 231);
+                                                                                 padding: 20px 10px 5px 10px;
+                                                                                 height: 100vh;
+                                                                                 width: 55%;
+                                                                                 background-color: rgb(176, 239, 243);
+                                                                                 border-radius: 8px;
+                                                                             }
+                                                                             
+                                                                             .container-mensagens {
+                                                                                 width: 100%;
+                                                                                 overflow-y: auto;
+                                                                                 border-radius: 5px;
+                                                                             }
+                                                                             
+                                                                             input {
+                                                                                 display: inline;
+                                                                                 border-radius: 5px;
+                                                                                 background-color: rgb(177, 242, 247);
+                                                                             height: 40px;
+                                                                             width: 160px;
 
- ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px rgb(137, 239, 243) border-radius: 10px;
-}
+                                                                             }
 
- ::-webkit-scrollbar-thumb {
-    background: rgb(102, 173, 253);
-    border-radius: 10px;
-}
-
-.container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    flex-direction: column;
-    border: 1px solid rgb(103, 141, 247);
-    padding: 20px 10px 5px 10px;
-    height: 100vh;
-    width: 600px;
-    background-color: rgb(186, 241, 243);
-}
-
-.container-mensagens {
-    width: 100%;
-    overflow-y: auto;
-}
-
-input {
-    display: inline;
-}
-
-.grid-input {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 25% 60% 15%;
-}
-
-.mensagem-div-eu {
-    display: flex;
-    justify-content: flex-end
-}
-
-.mensagem-div-outros {
-    display: flex;
-    justify-content: flex-start;
-}
-
-.mensagem-eu {
-    padding: 8px;
-    background-color: rgb(159, 233, 255);
-    margin-bottom: 7px;
-    max-width: 40%;
-}
-
-.mensagem-outros {
-    padding: 8px;
-    background-color: rgb(171, 247, 205);
-    margin-bottom: 7px;
-    max-width: 40%;
-}
+                                                                             .button{
+                                                                                backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: #4cccc6;
+  border-radius: 09px;
+  border: 1px solid #a2d7e8;
+  border-width: 1px 1px 1px 1px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: inset 0px 1px 0px rgba(255,255,255,1),0px 1px 3px rgba(0,0,0,0.3);
+    color: #fff;
+  font-size: 15px;
+  font-family: arial;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4)
+  }
+  
+                                                                                 
+                                                                             
+                                                                             .mensagem-div-outros {
+                                                                                 display: flex;
+                                                                                 justify-content: flex-start;
+                                                                                 border-radius: 8px;
+                                                                             }
+                                                                             
+                                                                             .mensagem-eu {
+                                                                                 padding: 8px;
+                                                                                 background-color: rgb(104, 53, 243);
+                                                                                 margin-bottom: 7px;
+                                                                                 max-width: 40%;
+                                                                                 border-radius: 8px;
+                                                                             }
+                                                                             
+                                                                             .mensagem-outros {
+                                                                                 padding: 8px;
+                                                                                 background-color: rgb(114, 181, 226);
+                                                                                 margin-bottom: 7px;
+                                                                                 max-width: 40%;
+                                                                                 border-radius: 8px;
+                                                                             }
